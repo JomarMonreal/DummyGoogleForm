@@ -1,0 +1,145 @@
+<!--
+Jomar P. Monreal
+CMSC12 T23L
+An HTML page with a form for ordering a wedding cake
+
+References:
+Google Forms for design template
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/ea8d63c66257d9768ea4cc77bfa3da5e.jpeg?x-expires=1669478400&x-signature=P8hDG4nHCVe7s7TZDq971WqqlgE%3D
+https://thumbs.dreamstime.com/b/dessert-table-delicious-violet-wedding-cake-165550705.jpg
+-->
+
+<!DOCTYPE html>
+	<head>
+		<title>Order A Wedding Cake!</title>
+		<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="monreal_ex9.css"/>
+		<script src="monreal_ex11.js"></script>
+	</head>
+	<body>
+		<form>
+			<fieldset class="coverPage">
+			</fieldset>
+
+			<fieldset class="titlePage">
+				<div class="titlePageHeader"></div>
+				<div class="fieldsetBody">
+					<h1>Order A Wedding Cake!</h1>
+					<p>
+						Our basement is full of cake ingredients. Without any idea what to do with it, 
+						we decided to use it to run a bakery. My cat is really hungry. Please place your 
+						order, so you can help solving my cat's hunger problem.
+					</p>
+				</div>
+				<hr/>
+				<div class="fieldsetBody titlePageEmail">
+					<span class="email">jpmonreal@up.edu.ph</span> <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Switch account</a>
+					<br/>
+					<br/>
+					<span class="redText">*Required</span>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Customer Information</legend>
+				<div class="fieldsetHeader"></div>
+
+				<div class="fieldsetBody">
+					<label>Name:</label>
+					<input id="name" type="text" name="Name" placeholder="Your answer" required/><br/>
+	
+					<label>Mobile Number:</label>
+					<input id="mobileNumber" type="text" name="MobileNumber" placeholder="09XXXXXXXXX" maxlength="11" minlength="11" required><br/>
+	
+					<label>Email Address:</label>
+					<input id="emailAddress"type="email" name="EmailAddress" placeholder="Your answer" required>
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>Wedding Cake Details</legend>
+				<div class="fieldsetHeader"></div>
+
+				<div class="fieldsetBody">
+					<label>Tiers (1-5)</label>
+					<input id="tier" type="number" name="Number" placeholder="Your answer" min="1" max="5"/><br/>
+	
+					<label>Cake Flavor</label>
+					<label><input id="tradWhite" type="radio" name="flavor" value="Traditional White" checked>Traditional White</label>
+					<label><input id="DFChoco" type="radio" name="flavor" value="Devil's Food Chocolate">Devil's Food Chocolate</label>
+					<label><input id="redVelvet" type="radio" name="flavor" value="Red Velvet">Red Velvet</label>
+					<label><input id="lemon" type="radio" name="flavor" value="Lemon">Lemon</label><br/>
+	
+					<label>Filling</label>
+					<label><input id="rasp" type="radio" name="filling" value="Raspberry Jam" checked>Raspberry Jam</label>
+					<label><input id="straw" type="radio" name="filling" value="Strawberry Jam">Strawberry Jam</label>
+					<label><input id="butter" type="radio" name="filling" value="Buttercream">Buttercream</label>
+					<label><input id="apricot" type="radio" name="filling" value="Apricot Jam">Apricot Jam</label><br/>
+	
+					<label>Icing</label>
+					<label><input id="buttercream" type="radio" name="icing" value="Buttercream" checked>Buttercream</label>
+					<label><input id="creamCheese" type="radio" name="icing" value="Cream Cheese">Cream Cheese</label>
+					<label><input id="mochaEspresso" type="radio" name="icing" value="Mocha Espresso">Mocha Espresso</label><br/>
+	
+					<label>Inside Cake Additions</label>
+					<label><input id="walnutIC" type="checkbox" name="insCakeAddition" value="Walnut">Walnut</label>
+					<label><input id="chocoChipsIC" type="checkbox" name="insCakeAddition" value="Chocolate Chips">Chocolate Chips</label>
+					<label><input id="pecansIC" type="checkbox" name="insCakeAddition" value="Pecans">Pecans</label>
+					<label><input id="whiteChocoChipsIC" type="checkbox" name="insCakeAddition" value="White Chocolate Chips">White Chocolate Chips</label><br/>
+	
+					<label>Decorative Additions</label>
+					<label><input id="walnutD" type="checkbox" name="decorAddition" value="Walnut">Walnut</label>
+					<label><input id="Chocolate Chips" type="checkbox" name="decorAddition" value="Chocolate Chips">Chocolate Chips</label>
+					<label><input id="pecansD" type="checkbox" name="decorAddition" value="Pecans">Pecans</label>
+					<label><input id="whiteChocoChipsD" type="checkbox" name="decorAddition" value="White Chocolate Chips">White Chocolate Chips</label><br/>
+	
+					<label>Liquid Infusion: </label>
+					<select id="liquidInfusion" name="liquidInfusion">
+						<option value="Rum" name="infusion">Rum</option>
+						<option value="Amaretto" name="infusion">Amaretto</option>
+						<option value="Kaluha" name="infusion">Kaluha</option>
+						<option value="None" name="infusion">None</option>
+					</select>			
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Delivery Details</legend>
+				<div class="fieldsetHeader"></div>
+				
+				<div class="fieldsetBody">
+					<label>Shipping</label>
+					<label><input id="storePickup" type="radio" name="shipping" value="Store Pickup" onclick="disableDeliveries(true)" checked>Store Pickup</label>
+					<label><input id="delivery" type="radio" name="shipping" value="Delivery" onclick="disableDeliveries(false)">Delivery</label>
+					<br/>
+
+					<label>Delivery Address</label>
+					<textarea id="deliveryAddress" rows="6" cols="70" placeholder="Address here..." required disabled></textarea>
+					<br/>
+	
+					<label>Preferred delivery date</label>
+					<input id="deliveryDate" type="date" name="deliveryDate" onblur="checkDate()" onfocus="checkDate()" required disabled>
+					<label id="deliveryDateReminder"></label>
+					<br/>
+					<label>Preferred delivery time</label>
+					<input id="deliveryTime" type="time" name="deliveryTime" onblur="checkTime()" onfocus="checkTime()" required disabled>
+					<label id="deliveryTimeReminder"></label>
+					<br/>
+				</div>
+			</fieldset>
+
+			<div class="buttonsContainer">
+				<button id="submit" type="submit" onclick="showSummary(event)">Submit</button>
+				<button id="reset" type="reset">Clear form</button>
+			</div>
+			<footer>
+				<div id="passNote">Never submit passwords through Gurgle From.</div>
+				<div id="endNote">This content is neither created nor endorsed by Gurgle. <a href="">Report Abuse</a> - <a href="">Terms of Service</a> - <a href="">Privacy Policy</a></div>
+				<div id="logo"><strong>Gurgle</strong> From</div>
+			</footer>
+		</form>
+
+	</body>
+</html>
